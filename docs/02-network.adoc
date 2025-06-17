@@ -1,5 +1,28 @@
 = 02 Network Layout
-192.168.200.0/24   – Home LAN  
-192.168.200.51     – Pi-hole (CT 100)  
-192.168.200.137    – Proxmox host  
-192.168.200.1      – Router / Gateway
+
+192.168.x.0/24   – Home LAN  
+192.168.x.51     – Pi-hole (CT 100)  
+192.168.x.137    – Proxmox host  
+192.168.x.1      – Router / Gateway
+
+== IP plan
+
+|===
+|Purpose |Address |Notes
+
+|Gateway / DHCP
+|192.168.x.1
+|SmartRG router
+
+|Proxmox host
+|192.168.x.137
+|Static in installer
+
+|Pi-hole CT 100
+|192.168.x.51
+|Static in CT config
+
+|DHCP pool
+|192.168.x.100-249
+|All Wi-Fi clients
+|===

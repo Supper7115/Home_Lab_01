@@ -1,0 +1,68 @@
+= 04 • Pi-hole Container (CT 100)
+
+== Template & CT creation
+
+[source,bash]
+----
+# Proxmox shell
+pveam update
+pveam download local debian-12-standard_20240406_amd64.tar.zst
+
+pct create 100 local:vztmpl/debian-12-standard_20240406_amd64.tar.zst \
+  --hostname pihole \
+  --cores 1 --memory 512 --swap 512 \
+  --net0 name=eth0,bridge=vmbr0,ip=192.168.200.51/24,gw=192.168.200.1 \
+  --rootfs local-lvm:4 \
+  --unprivileged 1
+----
+
+=== Convert to privileged (needed for whiptail dialogs)
+
+```bash
+pct stop 100
+nano /etc/pve/lxc/100.conf   # remove 'unprivileged', add:
+features: nesting=1,keyctl=1
+pct start 100
+
+== Pi-hole install (v6)
+
+. Commands:
++
+----
+pct enter 100
+apt update && apt install -y curl
+curl -sSL https://install.pi-hole.net | bash
+----
+
+. Upstream DNS → Cloudflare
+
+. Privacy level → 0 (Show everything)
+
+. Web-admin password set via pihole setpassword
+
+== Router DHCP change
+
+SmartRG web UI → Network ▸ LAN ▸ DHCP Server →
+DNS 1 =192.168.x.51, DNS 2 = (blank) → Save.
+
+== Dashboard
+
+image::../diagrams/pihole-dashboard.png[width=600,align=center]
+
+---
+
+## 6 `docs/99-faq.adoc`
+
+```asciidoc
+= 99 • FAQ
+
+
+== Top blocked requests 
+
+beacons5.gvt2.com : Google telemetry beacon. 
+
+== Roll-back plan if Pi-hole dies?
+
+. SSH to router → replace DNS with `8.8.8.8`.  
+. Restore CT 100 snapshot in Proxmox.  
+. Put `192.168.x.51` back in the router.

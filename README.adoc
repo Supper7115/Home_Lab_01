@@ -1,1 +1,56 @@
-= Home Lab on Proxmox\nCamille — 2025-06-17\n\nA reproducible lab on HP EliteDesk & Proxmox VE running Pi-hole.
+= Home Lab 01
+:toc: macro
+:icons: font
+:source-highlighter: highlightjs
+
+== Stack at a glance
+
+[cols="h,1,2"]
+|===
+|Node |Role |Key software
+
+|EliteDesk 800 G3 (192.168.x.137)
+|Hypervisor
+|* Proxmox VE 8.4  
+* Pi-hole CT 100
+
+|ROG Strix Laptop (dynamic)
+|Management workstation
+|* Linux Mint Cinnamon  
+* SSH, browser, VS Code  
+
+|Router (192.168.x.1)
+|Gateway + DHCP
+|* SmartRG SR400ac  
+* LAN DNS ⇒ 192.168.x.51
+|===
+
+image::diagrams/lab-stack.png[align=center,width=600]
+
+== Quick start
+
+. Flash and install **Linux Mint 21.3** on the ROG Strix laptop – see _docs/00-linux_mint.adoc_.
+. Install Proxmox VE on the EliteDesk – see _docs/03-proxmox.adoc_
+. Restore or create CT 100 → Pi-hole (static 192.168.x.51).
+. Point router’s LAN-DNS to **192.168.x.51**.
+. 🍿 Browse ad-free.
+
+== Repo structure
+
+[source]
+----
+README.adoc            – overview (this file)
+docs/                  – deep-dive docs per topic
+diagrams/              – .drawio sources + exported PNGs
+scripts/               – helper backups, etc.
+snapshots/             – exported CT/VM backups (.tar.zst)
+configs/               – sanitized config snippets
+----
+
+== Roadmap (other containers)
+
+* [ ] Vaultwarden (CT 101)  
+* [ ] Nextcloud (CT 102)  
+* [ ] Automated vzdump → external disk  
+* [ ] UPS status integration (apcupsd)
+

@@ -1,0 +1,36 @@
+= 00 • Migrating the Laptop to Linux Mint 21.3
+:toc:
+:icons: font
+
+NOTE: This step replaces the factory Windows 11 install on the ASUS ROG Strix
+with Linux Mint 21.3 “Virginia” (Cinnamon edition) so the management laptop
+matches the *nix-centric tool-chain used in the lab.
+
+== Why switch?
+
+* Native OpenSSH, rsync, and git – no PuTTY / MobaXterm required  
+* Better file-watch tooling (inotify, lsof) for log-tailing Proxmox  
+* Snapshots via Timeshift before kernel upgrades
+
+== Install at a glance
+
+. Download `linuxmint-21.3-cinnamon-64bit.iso`.
+. Flash with **balenaEtcher** to a 16 GB USB stick.
+. BIOS → Secure Boot **Off**, boot from USB.
+. Select “Erase disk and install Mint” (dual-boot not needed).
+. Reboot; run `sudo apt update && sudo apt upgrade -y`.
+
+== Post-install tweaks for lab work
+
+| Package | Command | Purpose
+|---------|---------|--------
+| fish, starship | `sudo apt install fish starship` | nicer prompt
+| vim (full) | `sudo apt install vim` | replaces vim-tiny
+| git-credential-manager | `sudo apt install gh` | GitHub auth via OAuth
+| OpenSSH | pre-installed | `ssh root@192.168.200.137` into Proxmox
+| fastfetch | `sudo apt install fastfetch` | system summary in screenshots
+
+== Screenshots
+
+image::../diagrams/mint-desktop.png[width=500,align=center]
+

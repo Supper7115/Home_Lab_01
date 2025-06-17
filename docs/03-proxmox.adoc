@@ -1,0 +1,30 @@
+= 03 • Installing Proxmox VE
+
+== BIOS tweaks (HP EliteDesk)
+
+. F10 → System Options  
+. **Disable Secure Boot**  
+. **Uncheck “Configure Storage Controller for Intel Optane”** → forces AHCI  
+. Video memory down to 32 MB (saves RAM)
+
+== Installer steps
+
+|Step |Value
+|---|---
+License | I agree
+Target disk | 512 GB NVMe · ext4 (LVM)
+Country / Timezone | Canada / America – Toronto
+Root PW | xxxxxx
+Network | Hostname `proxmox.local` · IP `192.168.x.137/24` · GW `192.168.x.1` · DNS `192.168.x.1`
+
+== First login
+
+Visit `https://192.168.x.137:8006` → ignore TLS warning → login `root`.
+
+== Storage layout
+
+[source]
+----
+local      : ISO + CT templates (directory)
+local-lvm  : VM/CT disks (thin-LVM)
+----
