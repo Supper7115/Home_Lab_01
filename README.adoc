@@ -1,0 +1,1 @@
+= Home Lab on Proxmox\nCamille — 2025-06-17\n\nA reproducible lab on HP EliteDesk & Proxmox VE running Pi-hole.

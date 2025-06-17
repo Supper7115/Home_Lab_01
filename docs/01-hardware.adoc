@@ -1,0 +1,3 @@
+= 01 Hardware
+* HP EliteDesk 800 G3 Mini – i5-6500T, 16 GB, 512 GB NVMe
+* ASUS ROG Strix laptop – Ryzen 7 6800H, 16 GB, 1 TB

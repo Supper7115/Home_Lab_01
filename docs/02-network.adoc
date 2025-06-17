@@ -1,0 +1,5 @@
+= 02 Network Layout
+192.168.200.0/24   – Home LAN  
+192.168.200.51     – Pi-hole (CT 100)  
+192.168.200.137    – Proxmox host  
+192.168.200.1      – Router / Gateway
