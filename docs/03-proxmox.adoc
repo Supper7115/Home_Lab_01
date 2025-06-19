@@ -82,7 +82,7 @@ Ticked **Automatically reboot** after I’ve removed the USB stick.
 |Converted container to **Privileged** (`unprivileged: 0` + `features: nesting=1,keyctl=1`) so *whiptail* could open a real TTY.
 |===
 
-image::images/image1.png[image]
+image::../images/image1.png[image]
 
 == 6• First Login 
 
