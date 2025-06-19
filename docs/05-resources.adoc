@@ -1,0 +1,14 @@
+= 05 • Reference Resources
+:toc:
+:icons: font
+
+A short list of the docs and blog posts I followed during the build (and chatgpt lol).
+
+== Official documentation
+
+* link:https://pve.proxmox.com/wiki/Installation[Proxmox VE – Installation Wiki]
+* link:https://docs.pi-hole.net/main/post-install/[Pi-hole – Post-Install Guide]
+
+== Community guides
+
+* link:https://www.wundertech.net/how-to-install-pi-hole-on-proxmox/[WunderTech – “How to Install Pi-hole on Proxmox”]

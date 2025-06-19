@@ -71,17 +71,3 @@ beacons5.gvt2.com : Google telemetry beacon.
 . SSH to router → replace DNS with `8.8.8.8`.  
 . Restore CT 100 snapshot in Proxmox.  
 . Put `192.168.x.51` back in the router
-
-.| Step           | Setting                                      |
-|----------------|----------------------------------------------|
-| License        | I agree                                      |
-| Target disk    | 512 GB NVMe SSD, file system **ext4 (LVM)**  |
-| Locale         | `en_CA.UTF-8` – Montreal time zone           |
-| Root password  | **STRONG_PASS_HERE**                         |
-| Network        | Hostname `proxmox.local`                     |
-|                | IP `192.168.x.137/24`                        |
-|                | Gateway `192.168.x.1`                        |
-|                | DNS `192.168.x.1`                            |
-
-Ticked **Automatically reboot** after I’ve removed the USB stick.
-
