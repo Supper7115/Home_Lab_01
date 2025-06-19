@@ -23,10 +23,6 @@
 |Pi-hole CT 100
 |192.168.x.51
 |Static in CT config
-
-|DHCP pool
-|192.168.x.100-249
-|All Wi-Fi clients
 |===
 
 == Note
