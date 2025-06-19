@@ -5,27 +5,26 @@
 
 == Stack at a glance
 
-[cols="h,1,2"]
+.Stack at a glance
+[cols="h,1,2", options="header"]
 |===
-|Node |Role |Key software
+| Node | Role | Key software / services
 
-|EliteDesk 800 G3 (192.168.x.137)
-|Hypervisor
-|* Proxmox VE 8.4  
-* Pi-hole CT 100
+| EliteDesk 800 G3 (192.168.x.137)
+| Hypervisor
+| * Proxmox VE 8.4 +
+  * Pi-hole CT 100
 
-|ROG Strix Laptop (dynamic)
-|Management workstation
-|* Linux Mint Cinnamon  
-* SSH, browser, VS Code  
+| ROG Strix Laptop (dynamic)
+| Management workstation
+| * Linux Mint Cinnamon +
+  * SSH, Firefox, VS Code
 
-|Router (192.168.x.1)
-|Gateway + DHCP
-|* SmartRG SR400ac  
-* LAN DNS ⇒ 192.168.x.51
+| Router (192.168.x.1)
+| Gateway + DHCP
+| * SmartRG SR400ac firmware +
+  * LAN DNS ⇒ 192.168.x.51
 |===
-
-image::diagrams/lab-stack.png[align=center,width=600]
 
 == Quick start
 
