@@ -16,6 +16,8 @@ pct create 100 local:vztmpl/debian-12-standard_20240406_amd64.tar.zst \
   --unprivileged 1
 ----
 
+Note: I chose a Debian container mainly out of familiarity since I used it in school and most tutorials I found used Debian. There’s no strong technical reason; other distros like Ubuntu or Alpine could have worked too.
+
 === Convert to privileged (needed for whiptail dialogs, add issues because of the unprivileged)
 
 ```bash
@@ -64,10 +66,12 @@ image::../images/image2.png[image2]
 
 == Top blocked requests 
 
-beacons5.gvt2.com : Google telemetry beacon. 
+beacons5.gvt2.com : Google telemetry.
+
+My boyfriend stated that he felt internet was faster (possible since it lower bandwitdth usage) 
 
 == Roll-back plan if Pi-hole dies?
 
-. SSH to router → replace DNS with `8.8.8.8`.  
-. Restore CT 100 snapshot in Proxmox.  
+. In router → replace DNS with `8.8.8.8`.  
+. Restore CT 100 snapshot in Proxmox (I have a script but did not test it yet)
 . Put `192.168.x.51` back in the router

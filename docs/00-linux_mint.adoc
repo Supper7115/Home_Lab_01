@@ -3,7 +3,7 @@
 :icons: font
 
 NOTE: Windows 11 was originally installed on my ASUS ROG Strix laptop. I decided to switch to Linux Mint 21.3 (Cinnamon edition) because it's user-friendly and visually similar to Windows.  
-I considered dual booting but ultimately chose to fully switch to Linux. I also changed my default browser to Firefox to align more with open-source. This is of course not necessary for the lab itself.
+I considered dual booting but ultimately chose to fully switch to Linux. I also changed my default browser to Firefox to align more with open-source. This is of course not necessary for the lab itself (but it does simplify the access).
 
 == Install at a glance
 
@@ -21,13 +21,4 @@ I considered dual booting but ultimately chose to fully switch to Linux. I also 
 Opened *Macrium Reflect* and went to **Other Tasks > Create Rescue Media** to create the rescue environment on a flash drive.  
 In case of an issue: boot from the rescue USB, plug in the Seagate drive, select the Windows 11 image, and restore the system.
 
-== Post-install tweaks for lab work
 
-|===
-| Package | Command | Purpose
-
-| vim (full) | `sudo apt install vim` | Replaces minimal `vim-tiny`
-| git-credential-manager | `sudo apt install gh` | GitHub authentication via OAuth
-| OpenSSH | Pre-installed | Allows `ssh root@192.168.200.137` to access Proxmox
-| fastfetch | `sudo apt install fastfetch` | Displays system summary for screenshots
-|===

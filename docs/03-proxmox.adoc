@@ -18,13 +18,13 @@ toc::[]
 https://proxmox.com/en/downloads
 
 |Flashing tool
-|Used **Rufus** to write the ISO → 8 GB USB stick.
+|Used **USB Image Writer** to write the ISO → 8 GB USB stick. Available natively on Linux Mint.
 
 |Temporary peripherals
 |DP/HDMI monitor, USB keyboard & mouse. (Removed later—server runs headless.)
 
 |Ethernet cable
-|EliteDesk LAN ↔ router LAN port (for web UI after install).
+|EliteDesk LAN ↔ router LAN port.
 |===
 
 == 2 • BIOS checklist (F10 on POST)

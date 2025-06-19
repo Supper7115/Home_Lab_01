@@ -18,7 +18,7 @@
 | ROG Strix Laptop (dynamic)
 | Management workstation
 | * Linux Mint Cinnamon +
-  * SSH, Firefox, VS Code
+  * SSH, Firefox
 
 | Router (192.168.x.1)
 | Gateway + DHCP
