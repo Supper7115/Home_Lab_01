@@ -59,7 +59,7 @@ DNS 1 =192.168.x.51, DNS 2 = (blank) → Save.
 
 == Pi-Hole UI
 
-image::../images/image2.png
+image::../images/image2.png[image2]
 
 
 == Top blocked requests 
@@ -70,7 +70,9 @@ beacons5.gvt2.com : Google telemetry beacon.
 
 . SSH to router → replace DNS with `8.8.8.8`.  
 . Restore CT 100 snapshot in Proxmox.  
-. Put `192.168.x.51` back in the router.| Step           | Setting                                      |
+. Put `192.168.x.51` back in the router
+
+.| Step           | Setting                                      |
 |----------------|----------------------------------------------|
 | License        | I agree                                      |
 | Target disk    | 512 GB NVMe SSD, file system **ext4 (LVM)**  |
