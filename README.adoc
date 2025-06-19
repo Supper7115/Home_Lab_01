@@ -40,17 +40,11 @@ image::diagrams/lab-stack.png[align=center,width=600]
 [source]
 ----
 README.adoc            – overview (this file)
-docs/                  – deep-dive docs per topic
-diagrams/              – .drawio sources + exported PNGs
+docs/                  – docs per topic
 scripts/               – helper backups, etc.
-snapshots/             – exported CT/VM backups (.tar.zst)
-configs/               – sanitized config snippets
 ----
 
-== Roadmap (other containers)
+== Roadmap ? (other containers)
 
 * [ ] Vaultwarden (CT 101)  
 * [ ] Nextcloud (CT 102)  
-* [ ] Automated vzdump → external disk  
-* [ ] UPS status integration (apcupsd)
-
