@@ -29,11 +29,11 @@ image::diagrams/lab-stack.png[align=center,width=600]
 
 == Quick start
 
-. Flash and install **Linux Mint 21.3** on the ROG Strix laptop – see _docs/00-linux_mint.adoc_.
+. Installed **Linux Mint** on the ROG Strix laptop – see _docs/00-linux_mint.adoc_.
 . Install Proxmox VE on the EliteDesk – see _docs/03-proxmox.adoc_
-. Restore or create CT 100 → Pi-hole (static 192.168.x.51).
+. Create CT 100 → Pi-hole (static 192.168.x.51). – see _docs/04-pi-hole.adoc_
 . Point router’s LAN-DNS to **192.168.x.51**.
-. 🍿 Browse ad-free.
+. 🍿.
 
 == Repo structure
 
@@ -44,7 +44,9 @@ docs/                  – docs per topic
 scripts/               – helper backups, etc.
 ----
 
-== Roadmap ? (other containers)
+== Roadmap ? (other containers ideas for my network)
 
 * [ ] Vaultwarden (CT 101)  
 * [ ] Nextcloud (CT 102)  
+* [ ] Jellyfin 
+* [ ] Immich
