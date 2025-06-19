@@ -41,27 +41,28 @@ https://proxmox.com/en/downloads
   Disable **USB boot** after install to avoid looping the installer.
 . Save (F10) → Reboot with installer USB inserted → tap **F9** to pick the stick.
 
-== 3 • Installer wizard values
+== 3 • Installer wizard valuesScreenshot from 2025-06-18 21-02-56
 
-|Step            |Setting
-|----------------|----------
-License          |I agree
-Target disk      |512 GB NVMe SSD, file system **ext4 (LVM)**
-Locale           |`en_CA.UTF-8` – Montreal time zone
-Root password    |**STRONG_PASS_HERE**
-Network          |Hostname `proxmox.local`  
-                 |IP `192.168.x.137/24`  
-                 |Gateway `192.168.x.1`  
-                 |DNS `192.168.x.1`
+| Step           | Setting                                      |
+|----------------|----------------------------------------------|
+| License        | I agree                                      |
+| Target disk    | 512 GB NVMe SSD, file system **ext4 (LVM)**  |
+| Locale         | `en_CA.UTF-8` – Montreal time zone           |
+| Root password  | **STRONG_PASS_HERE**                         |
+| Network        | Hostname `proxmox.local`                     |
+|                | IP `192.168.x.137/24`                        |
+|                | Gateway `192.168.x.1`                        |
+|                | DNS `192.168.x.1`                            |
 
 Ticked **Automatically reboot** after I’ve removed the USB stick.
+
 
 == 4 • Post-install
 
 * First boot ends on a black console with: +
 
   `You can now connect to the Proxmox VE web interface:`  
-  `https://192.168.200.137:8006`
+  `https://192.168.x.137:8006`
 
 * From the laptop → browser → ignore TLS warning → log in as **root**.
 
@@ -81,7 +82,7 @@ Ticked **Automatically reboot** after I’ve removed the USB stick.
 |Converted container to **Privileged** (`unprivileged: 0` + `features: nesting=1,keyctl=1`) so *whiptail* could open a real TTY.
 |===
 
-image::images/image1.png[Alt text, width=600, align=center]
+image::images/image1.png[image]
 
 == 6• First Login 
 

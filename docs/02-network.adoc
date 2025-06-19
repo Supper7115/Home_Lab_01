@@ -1,9 +1,11 @@
 = 02 Network Layout
 
+----
 192.168.x.0/24   – Home LAN  
 192.168.x.51     – Pi-hole (CT 100)  
 192.168.x.137    – Proxmox host  
 192.168.x.1      – Router / Gateway
+----
 
 == IP plan
 

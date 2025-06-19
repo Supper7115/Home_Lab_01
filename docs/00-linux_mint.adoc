@@ -26,7 +26,6 @@ In case of an issue: boot from the rescue USB, plug in the Seagate drive, select
 |===
 | Package | Command | Purpose
 
-| fish, starship | `sudo apt install fish starship` | Nicer shell prompt
 | vim (full) | `sudo apt install vim` | Replaces minimal `vim-tiny`
 | git-credential-manager | `sudo apt install gh` | GitHub authentication via OAuth
 | OpenSSH | Pre-installed | Allows `ssh root@192.168.200.137` to access Proxmox
