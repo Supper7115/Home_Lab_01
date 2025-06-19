@@ -16,15 +16,17 @@ pct create 100 local:vztmpl/debian-12-standard_20240406_amd64.tar.zst \
   --unprivileged 1
 ----
 
-=== Convert to privileged (needed for whiptail dialogs)
+=== Convert to privileged (needed for whiptail dialogs, add issues because of the unprivileged)
 
 ```bash
 pct stop 100
-nano /etc/pve/lxc/100.conf   # remove 'unprivileged', add:
+vi /etc/pve/lxc/100.conf   # remove 'unprivileged', add:
 features: nesting=1,keyctl=1
 pct start 100
 
 == Pi-hole install (v6)
+
+. From Proxmox (ssh root@192.168.x.137)
 
 . Commands:
 +
@@ -40,21 +42,24 @@ curl -sSL https://install.pi-hole.net | bash
 
 . Web-admin password set via pihole setpassword
 
+. Other useful commands
++
+----
+pct list #list container and give status
+pct start 100 #start container 100
+pct stop 100 
+----
+
 == Router DHCP change
+
+After testing with one device (my laptop) I changed my router’s DNS settings to point to Pi-hole, so that all devices on the network automatically use it for DNS resolution. This ensures network-wide blocking of ads, trackers, and unwanted domains.
 
 SmartRG web UI → Network ▸ LAN ▸ DHCP Server →
 DNS 1 =192.168.x.51, DNS 2 = (blank) → Save.
 
-== Dashboard
+== Pi-Hole UI
 
-image::../diagrams/pihole-dashboard.png[width=600,align=center]
-
----
-
-## 6 `docs/99-faq.adoc`
-
-```asciidoc
-= 99 • FAQ
+image::images/image2.png
 
 
 == Top blocked requests 

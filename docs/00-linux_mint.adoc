@@ -2,35 +2,33 @@
 :toc:
 :icons: font
 
-NOTE: This step replaces the factory Windows 11 install on the ASUS ROG Strix
-with Linux Mint 21.3 “Virginia” (Cinnamon edition) so the management laptop
-matches the *nix-centric tool-chain used in the lab.
-
-== Why switch?
-
-* Native OpenSSH, rsync, and git – no PuTTY / MobaXterm required  
-* Better file-watch tooling (inotify, lsof) for log-tailing Proxmox  
-* Snapshots via Timeshift before kernel upgrades
+NOTE: Windows 11 was originally installed on my ASUS ROG Strix laptop. I decided to switch to Linux Mint 21.3 (Cinnamon edition) because it's user-friendly and visually similar to Windows.  
+I considered dual booting but ultimately chose to fully switch to Linux. I also changed my default browser to Firefox to align more with open-source. This is of course not necessary for the lab itself.
 
 == Install at a glance
 
-. Download `linuxmint-21.3-cinnamon-64bit.iso`.
-. Flash with **balenaEtcher** to a 16 GB USB stick.
-. BIOS → Secure Boot **Off**, boot from USB.
-. Select “Erase disk and install Mint” (dual-boot not needed).
-. Reboot; run `sudo apt update && sudo apt upgrade -y`.
+. Backed up all personal files to my external hard drive (Seagate Portable Drive).
+
+. Created a full system backup using the free version of Macrium Reflect: https://www.macrium.com/reflectfree  
+  The backup image was also saved to my Seagate drive.
+
+. Downloaded the ISO for Linux Mint 21.3 Cinnamon: https://linuxmint.com/edition.php?id=319
+
+. Used Rufus to write the ISO to a USB stick and create a bootable installer: https://rufus.ie/fr/
+
+. On a separate USB (rescue USB):  
++
+Opened *Macrium Reflect* and went to **Other Tasks > Create Rescue Media** to create the rescue environment on a flash drive.  
+In case of an issue: boot from the rescue USB, plug in the Seagate drive, select the Windows 11 image, and restore the system.
 
 == Post-install tweaks for lab work
 
+|===
 | Package | Command | Purpose
-|---------|---------|--------
-| fish, starship | `sudo apt install fish starship` | nicer prompt
-| vim (full) | `sudo apt install vim` | replaces vim-tiny
-| git-credential-manager | `sudo apt install gh` | GitHub auth via OAuth
-| OpenSSH | pre-installed | `ssh root@192.168.200.137` into Proxmox
-| fastfetch | `sudo apt install fastfetch` | system summary in screenshots
 
-== Screenshots
-
-image::../diagrams/mint-desktop.png[width=500,align=center]
-
+| fish, starship | `sudo apt install fish starship` | Nicer shell prompt
+| vim (full) | `sudo apt install vim` | Replaces minimal `vim-tiny`
+| git-credential-manager | `sudo apt install gh` | GitHub authentication via OAuth
+| OpenSSH | Pre-installed | Allows `ssh root@192.168.200.137` to access Proxmox
+| fastfetch | `sudo apt install fastfetch` | Displays system summary for screenshots
+|===

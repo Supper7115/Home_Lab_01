@@ -8,7 +8,7 @@
 
 |HP EliteDesk 800 G3 Mini
 |i5-6500T (4c/4t) · 16 GB DDR4 · 512 GB NVMe SSD · DP×2 · Intel NIC
-|$150 (renewed)
+|$154 (renewed)
 
 |ASUS ROG Strix G513RM
 |Ryzen 7 6800H (8c/16t) · 16 GB DDR5 · 1 TB NVMe · RTX 3060 · Wi-Fi 6
@@ -18,7 +18,3 @@
 == Networking & power
 
 * SmartRG SR400ac router (combo modem/router)  
-
-== Photos / Notes
-
-*NVMe SSD was loose out-of-box – needed to open and replace correctly before Proxmox saw it.*

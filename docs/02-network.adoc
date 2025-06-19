@@ -26,3 +26,8 @@
 |192.168.x.100-249
 |All Wi-Fi clients
 |===
+
+== Note
+
+It wasn't necessary for this project, but I might reserved an IP address for my laptop on the router.  
+This would provide a consistent internal IP without needing to manually set a static IP in the laptop's network settings (useful if I take the laptop outside in other networks).
