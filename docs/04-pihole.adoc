@@ -11,7 +11,7 @@ pveam download local debian-12-standard_20240406_amd64.tar.zst
 pct create 100 local:vztmpl/debian-12-standard_20240406_amd64.tar.zst \
   --hostname pihole \
   --cores 1 --memory 512 --swap 512 \
-  --net0 name=eth0,bridge=vmbr0,ip=192.168.200.51/24,gw=192.168.200.1 \
+  --net0 name=eth0,bridge=vmbr0,ip=192.168.x.51/24,gw=192.168.x.1 \
   --rootfs local-lvm:4 \
   --unprivileged 1
 ----
@@ -23,7 +23,7 @@ pct stop 100
 vi /etc/pve/lxc/100.conf   # remove 'unprivileged', add:
 features: nesting=1,keyctl=1
 pct start 100
-
+```
 == Pi-hole install (v6)
 
 . From Proxmox (ssh root@192.168.x.137)
@@ -59,7 +59,7 @@ DNS 1 =192.168.x.51, DNS 2 = (blank) → Save.
 
 == Pi-Hole UI
 
-image::images/image2.png
+image::../images/image2.png
 
 
 == Top blocked requests 
@@ -70,4 +70,16 @@ beacons5.gvt2.com : Google telemetry beacon.
 
 . SSH to router → replace DNS with `8.8.8.8`.  
 . Restore CT 100 snapshot in Proxmox.  
-. Put `192.168.x.51` back in the router.
+. Put `192.168.x.51` back in the router.| Step           | Setting                                      |
+|----------------|----------------------------------------------|
+| License        | I agree                                      |
+| Target disk    | 512 GB NVMe SSD, file system **ext4 (LVM)**  |
+| Locale         | `en_CA.UTF-8` – Montreal time zone           |
+| Root password  | **STRONG_PASS_HERE**                         |
+| Network        | Hostname `proxmox.local`                     |
+|                | IP `192.168.x.137/24`                        |
+|                | Gateway `192.168.x.1`                        |
+|                | DNS `192.168.x.1`                            |
+
+Ticked **Automatically reboot** after I’ve removed the USB stick.
+
