@@ -41,20 +41,22 @@ https://proxmox.com/en/downloads
   Disable **USB boot** after install to avoid looping the installer.
 . Save (F10) → Reboot with installer USB inserted → tap **F9** to pick the stick.
 
-== 3 • Installer wizard valuesScreenshot from 2025-06-18 21-02-56
+== 3 • Installer wizard values
 
-| Step           | Setting                                      |
-|----------------|----------------------------------------------|
-| License        | I agree                                      |
-| Target disk    | 512 GB NVMe SSD, file system **ext4 (LVM)**  |
-| Locale         | `en_CA.UTF-8` – Montreal time zone           |
-| Root password  | **STRONG_PASS_HERE**                         |
-| Network        | Hostname `proxmox.local`                     |
-|                | IP `192.168.x.137/24`                        |
-|                | Gateway `192.168.x.1`                        |
-|                | DNS `192.168.x.1`                            |
+[%header,cols="1,3"]
+|===
+| Step | Setting
 
-Ticked **Automatically reboot** after I’ve removed the USB stick.
+| Target disk  | 512 GB NVMe SSD, file system *ext4 (LVM)*
+| Locale       | `en_CA.UTF-8` 
+| Root password| ******
+| Network      | Hostname `proxmox.local`
+|              | IP `192.168.x.137/24`
+|              | Gateway `192.168.x.1`
+|              | DNS `192.168.x.1`
+|===
+
+Ticked *Automatically reboot* after I removed the USB stick.
 
 
 == 4 • Post-install
